@@ -23,6 +23,7 @@ body{
     border-radius: 50px;
     overflow: hidden;
     margin: 0 auto;
+    user-select: none;
 }
 
 .game-head{
@@ -133,10 +134,12 @@ body{
 }
 
 .level-bar-percent{
-    width: 10%;
+    width: 0%;
     height: 100%;
     border-radius: 15px;
+    overflow: hidden;
     background: linear-gradient(90deg,#ADFAA1, #C597CC, #2F39A3);
+    transition: all .2s ease;
 }
 
 .game-body-tap{
@@ -179,5 +182,25 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+    }
+}
+
+/*Modification*/
+
+.active-tap{
+    transform: skew(4deg);
+    transition: all .2s ease;
+}
+
+/*Mobile Dev*/
+@media screen and (max-width: 475px){
+    .game{
+        width: 100vw;
+    }
+
+    .game-body-stats{
+        & div{
+            width: 90px;
+        }
     }
 }
